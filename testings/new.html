@@ -1,0 +1,60 @@
+<!--Html file to show testing page-->
+<!-- Author: sahu -->
+<!-- Date: 12-05-2016 -->
+
+<!DOCTYPE html>
+<html ng-app="testApp" ng-controller="testController">
+  <head>
+    <title>Add testing</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" >
+  </head>
+  <style>
+    	span{color:red;}
+  </style>
+  <body>
+    <div class="container">
+      <h1 class="text-center">New Test<a href='#' ng-click="" class="btn btn-primary pull-right">Back</a></h1>
+      <div class="col-md-8 col-md-offset-2">
+        <form name="testForm" ng-submit="testForm.$valid && addTest(test)" novalidate>
+          <div class="row">
+            <div>
+              Title:<br/><input type="text" name="title" ng-model="test.title" class="form-control" placeholder="Enter title" ng-minlength="4" ng-maxlength="15" required/>
+              <span ng-messages="testForm.title.$touched && testForm.title.$error">
+                <span ng-message="required">Title required</span>
+                <span ng-message="minlength">Minimum length should be 4 characters</span>
+                <span ng-message="maxlength">Maximum length should be 15 characters</span>
+              </span>
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <br/>
+                Description:
+              <br />
+              <textarea name="description" ng-model="test.description" class="form-control" placeholder="Enter description" ng-minlength="10" required></textarea>
+              <span ng-messages="testForm.description.$touched && testForm.description.$error">
+                <span ng-message="required">Description required</span>
+                <span ng-message="minlength">Minimum length should be 10 characters</span>
+              </span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 text-center">
+              <br />
+              <input type="submit" value="Add Testing" class="btn btn-primary" />
+            </div>
+          </div>
+        </form>
+
+      </div>
+      <!-- Script for AngularJs -->
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.js"></script>
+  		<script src="https://rawgit.com/TheSharpieOne/angular-input-match/master/dist/angular-validation-match.min.js"></script>
+      <script src="testings.js"></script>
+
+
+    </body>
+  </div>
+</html>

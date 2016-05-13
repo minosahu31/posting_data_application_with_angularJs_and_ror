@@ -1,0 +1,94 @@
+<!--Html file to show testing page-->
+<!-- Author: sahu -->
+<!-- Date: 12-05-2016 -->
+
+<!DOCTYPE html>
+<html ng-app="testApp">
+  <head>
+    <title>testings</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" >
+    <style>
+        span{color:red}
+
+        .navbar-brand{
+          font-size: 24px;
+        }
+        body{
+          font-family: monospace, serif;
+          background-color: #3E3E3E;
+          color: #F5F0F0;
+          padding-bottom: 100px;
+        }
+        .navbar-inverse {
+            background-color: #040404;
+            border-color: #080808;
+        }
+        td,th{
+          padding: 10px;
+        }
+        th{
+          font-size: 20px;
+        }
+        #title,#id{
+          padding-right:90px;
+        }
+        .data{
+          margin-left: 40px;
+        }
+        .errors{
+          color: red;
+          margin-top: 10px;
+        }
+        #for_id{
+          counter-reset: section;
+        }
+        #id:before{
+          counter-increment: section;
+          content: counter(section) "   ." ;
+        }
+</style>
+    </style>
+  </head>
+  <body>
+
+    <div class="navbar navbar-inverse">
+        <div class="container">
+          <div class="navbar-header">
+            <div class="col-md-8 col-md-offset-2">
+              <a class="navbar-brand" href="#">Testing</a>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div ng-controller="testController">
+
+      <!-- start of index -->
+      <div class="container">
+        <div ng-include="'testings.html'"></div>
+      </div>
+      <!-- End of index -->
+
+      <!-- For show test -->
+      <div ng-show="showme">
+        <div ng-include="'show.html'"></div>
+      </div>
+
+      <!-- For New test -->
+      <div ng-show="shownew">
+          <div ng-include="'new-testing.html'"></div>
+      </div>
+      <!-- End of new test -->
+
+      <!-- For Edit test -->
+      <div ng-show="showedit"><hr/>
+        <div ng-include="'edit-form.html'"></div>
+      </div>
+      <!-- Script for AngularJs -->
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+      <script src="testings.js"></script>
+    </div>
+
+  </body>
+</html>

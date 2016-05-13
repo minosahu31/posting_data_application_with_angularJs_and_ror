@@ -1,0 +1,28 @@
+<!--Html file for testings page-->
+<!-- Author: sahu -->
+<!-- Date: 12-05-2016 -->
+
+<h1>List of Testings<button ng-click="newForm()" class="btn btn-primary pull-right">New Testing</button></h1><hr/>
+
+<div class="col-md-8 col-md-offset-2">
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="testing in testings" class="rows">
+          <p id="for_id"></p>
+          <td id="id"></td>
+          <td id="title">{{ testing.title }}</td>
+          <!-- <td>{{ testing.description }}</td> -->
+          <td><button class="btn btn-primary" ng-click="show(testing.id)">Show</button></td>
+          <td><button class="btn btn-primary" ng-click="edit(testing.id)">Edit</button></td>
+          <td><button class="btn btn-primary" ng-click="delete1(testing.id)">Delete</button></td>
+        </tr>
+    </tbody>
+  </table>
+</div>

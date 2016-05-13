@@ -1,0 +1,53 @@
+<!--Html file to edit testing form page-->
+<!-- Author: sahu -->
+<!-- Date: 12-05-2016 -->
+
+<div class="container">
+  <h1 class="text-center">Edit Test</h1><hr/>
+  <div class="col-md-8 col-md-offset-2">
+    <form name="testForm" ng-submit="testForm.$valid && updateTest(updateTesting)" novalidate>
+      <div class="row">
+        <div>
+          <b>Title:</b><br/><input type="text" name="title" ng-model="updateTesting.title" class="form-control" placeholder="Enter title" ng-minlength="4" ng-maxlength="30" required/>
+          <span ng-show="testForm.$submitted || testForm.title.$touched && testForm.title.$invalid">
+            <span ng-show="testForm.title.$error.required">Title required</span>
+            <span ng-show="testForm.title.$error.minlength">Minimum length should be 4 characters</span>
+            <span ng-show="testForm.title.$error.maxlength">Maximum length should be 30 characters</span>
+          </span>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <br/>
+            <b>Description:</b>
+          <br />
+          <textarea name="description" ng-model="updateTesting.description" class="form-control" placeholder="Enter description" ng-minlength="10" required></textarea>
+          <span ng-show="testForm.$submitted || testForm.description.$touched && testForm.description.$invalid">
+            <span ng-show="testForm.description.$error.required">Description required</span>
+            <span ng-show="testForm.description.$error.minlength">Minimum length should be 10 characters</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Errors in updation.... -->
+      <div ng-show="updateError" class="errors">
+        <b>Errors:</b>
+        <ul>
+          <li ng-repeat="title_error in title_errors">title {{ title_error }}</li>
+          <li ng-repeat="description_error in description_errors">description {{ description_error }}</li>
+        </ul>
+      </div>
+
+
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <br />
+          <input type="submit" value="Update Testing" class="btn btn-primary" />
+        </div>
+      </div>
+    </form>
+
+  </div>
+
+</div>
+<!-- End of edit test -->
