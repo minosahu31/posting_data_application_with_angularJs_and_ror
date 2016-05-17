@@ -20,11 +20,6 @@ class TestingsController < ApplicationController
     render json: { success: true, testing: @testing }
   end
 
-  # GET /testings/1/edit
-  def edit
-    render json: { success: true, testing: @testing }
-  end
-
   # POST /testings
   # POST /testings.json
   def create
@@ -40,6 +35,11 @@ class TestingsController < ApplicationController
         #}
       end
     #end
+  end
+
+  # GET /testings/1/edit
+  def edit
+    render json: { success: true, testing: @testing }
   end
 
   # PATCH/PUT /testings/1
