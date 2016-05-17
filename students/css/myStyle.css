@@ -1,0 +1,43 @@
+span{color:red}
+
+.navbar-brand{
+  font-size: 24px;
+}
+body{
+  font-family: monospace, serif;
+  background-color: #3E3E3E;
+  color: #F5F0F0;
+  padding-bottom: 100px;
+}
+.navbar-inverse {
+    background-color: #040404;
+    border-color: #080808;
+}
+td,th{
+  padding: 10px;
+}
+th,strong{
+  font-size: 20px;
+  color: #337ab7;
+  text-decoration: underline;
+}
+#name,#sno{
+  padding-right:90px;
+}
+.data{
+  margin-left: 40px;
+}
+.errors{
+  color: red;
+  margin-top: 10px;
+}
+#for_id{
+  counter-reset: section;
+}
+#sno:before{
+  counter-increment: section;
+  content: counter(section) "   ." ;
+}
+tbody,p{
+  font-size: 20px;
+}

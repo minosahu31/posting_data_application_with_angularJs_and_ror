@@ -1,0 +1,33 @@
+<!-- File for index page of stundets -->
+<!-- Author: sahu -->
+<!-- Date: 16-05-2016 -->
+
+<div class="container"><hr/>
+  <div class="col-md-8 col-md-offset-2">
+    <h1 class="text-center">Show page</h1><hr/>
+    <p>
+      <strong>Name:</strong>
+      <p class="data" ng-if="student.name">{{ student.name }}</p>
+      <p class="data" ng-if="!student.name">Please update your name</p>
+    </p>
+
+    <p>
+      <strong>Email:</strong>
+      <p class="data" ng-if="student.email">{{ student.email }}</p>
+      <p class="data" ng-if="!student.email">Please update your email</p>
+    </p>
+
+    <p>
+      <strong>DOB:</strong>
+      <p class="data" ng-if="student.dob">{{ student.dob }}</p>
+      <p class="data" ng-if="!student.dob">Please update your date of birth</p>
+    </p>
+
+    <p>
+      <strong>Age:</strong>
+      <p class="data" ng-if="student.age">{{ student.age }}</p>
+      <p class="data" ng-if="!student.age">Please update your age</p>
+    </p>
+
+  </div>
+</div>

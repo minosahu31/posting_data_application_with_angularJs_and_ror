@@ -1,0 +1,48 @@
+<!-- File for index page of stundets -->
+<!-- Author: sahu -->
+<!-- Date: 16-05-2016 -->
+
+<div class="container"><hr/>
+  <h1 class="text-center">Edit student</h1>
+  <div class="col-md-8 col-md-offset-2"><hr/>
+    <form name="newStudentForm" ng-submit="updateStudent(student)" novalidate>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" ng-model="student.name" id="name" placeholder="Please enter your sweet name" ng-minlength="2" required>
+        <span ng-show="newStudentForm.$submitted || newStudentForm.name.$touched && newStudentForm.name.$invalid ">
+          <span ng-show="newStudentForm.name.$error.required">Name is required</span>
+          <span ng-show="newStudentForm.name.$error.minlength">Name should be minimum 2 characters</span>
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" ng-model="student.email" id="email" ng-format="" placeholder="Please enter your valid email address" required>
+        <span ng-show="newStudentForm.$submitted || newStudentForm.email.$touched && newStudentForm.email.$invalid">
+          <span ng-show="newStudentForm.email.$error.required">Email is required</span>
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="dob">DOB:</label>
+        <input type="text" class="form-control" ng-model="student.dob" id="dob" placeholder="Please enter your dob" required>
+        <span ng-show="newStudentForm.$submitted || newStudentForm.dob.$touched && newStudentForm.dob.$invalid ">
+          <span ng-show="newStudentForm.dob.$error.required">Dob is required</span>
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="age" class="form-control" ng-model="student.age" id="age" placeholder="Please enter your age" required>
+        <span ng-show="newStudentForm.$submitted || newStudentForm.age.$touched && newStudentForm.age.$invalid ">
+          <span ng-show="newStudentForm.age.$error.required">Age is required</span>
+        </span>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <br />
+          <input type="submit" value="Create Student" class="btn btn-primary" />
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

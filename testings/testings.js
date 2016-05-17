@@ -1,5 +1,6 @@
 var app = angular.module('testApp',[])
   app.controller("testController", function($scope, $http, $window){
+
     //Function for index
     window.onload = function(){
       $http.get("http://192.168.199.165:3000/testings")
@@ -9,7 +10,20 @@ var app = angular.module('testApp',[])
         $scope.shownew = false;
         $scope.createError = false;
         $scope.updateError = false;
-        $scope.testings = response.data.testings
+        $scope.testings = response.data.testings;
+      });
+    }
+
+    //Function to show a record
+    $scope.show = function(id){
+      $http.get("http://192.168.199.165:3000/testings/"+id+"/edit")
+      .then(function(response){
+          $scope.showedit = false;
+          $scope.shownew = false;
+          $scope.showme = true;
+         $scope.testing = response.data.testing
+        //alert("Title: "+ response.data.testing.title+"\n"+"Description: "+response.data.testing.description)
+        // $window.location.href = "/home/sahu/Desktop/sahu/AngularJS/testings/show.html";
       });
     }
 
@@ -68,18 +82,7 @@ var app = angular.module('testApp',[])
       });
     }
 
-    //Function to show a record
-    $scope.show = function(id){
-      $http.get("http://192.168.199.165:3000/testings/"+id+"/edit")
-      .then(function(response){
-          $scope.showedit = false;
-          $scope.shownew = false;
-          $scope.showme = true;
-         $scope.testing = response.data.testing
-        //alert("Title: "+ response.data.testing.title+"\n"+"Description: "+response.data.testing.description)
-        // $window.location.href = "/home/sahu/Desktop/sahu/AngularJS/testings/show.html";
-      });
-    }
+
 
     //Function to delete a record
     $scope.delete1 = function(id){

@@ -1,0 +1,46 @@
+<!-- File for index page of stundets -->
+<!-- Author: sahu -->
+<!-- Date: 16-05-2016 -->
+
+<!DOCTYPE html>
+<html ng-app="studentApp" lang="en">
+  <head>
+    <title>Students</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" >
+    <link rel="stylesheet" type="text/css" href="css/myStyle.css" >
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="container">
+          <div class="navbar-header">
+            <div class="col-md-8 col-md-offset-2">
+              <a class="navbar-brand" href="#">Students</a>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- end of navbar -->
+
+    <div ng-controller="studentsController">
+
+      <!-- start of students list -->
+      <div class="container">
+        <div ng-include="'students.html'"></div>
+      </div>
+      <!-- end of students list -->
+
+      <div ng-view></div>
+
+
+    </div>
+
+    <!-- Script for AngularJs -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+    <script src="js/student.js"></script>
+
+  </body>
+</html>
